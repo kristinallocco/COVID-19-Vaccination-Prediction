@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Vaccination Rates by County, Vaccination Rates by Ethnicity, County Map, Machine Learning Model">
+    <meta name="description" content="">
+    <meta name="page_type" content="np-template-header-footer-from-plugin">
+    <title>Analysis</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/nicepage.css" media="screen">
+<link rel="stylesheet" href="../static/css/Analysis.css" media="screen">
+    <script class="u-script" type="text/javascript" src="../static/js/jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="../static/js/nicepage.js" defer=""></script>
+    <meta name="generator" content="Nicepage 3.29.1, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+    
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": ""
+}</script>
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="Analysis">
+    <meta property="og:type" content="website">
+  </head>
+  <body class="u-body"><header class="u-clearfix u-header u-header" id="sec-0f16"><div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
+          <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px; font-weight: 700; text-transform: uppercase;">
+            <a class="u-button-style u-custom-active-border-color u-custom-active-color u-custom-border u-custom-border-color u-custom-borders u-custom-hover-border-color u-custom-hover-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
+              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><symbol id="menu-hamburger" viewBox="0 0 16 16" style="width: 16px; height: 16px;"><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
+</symbol>
+</defs></svg>
+            </a>
+          </div>
+          <div class="u-custom-menu u-nav-container">
+            <ul class="u-nav u-spacing-30 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-border-2 u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-grey-90" href={{ url_for('home') }} style="padding: 8px 16px;">Home</a>
+            </li><li class="u-nav-item"><a class="u-border-2 u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-grey-90" href={{ url_for('analysis') }} style="padding: 8px 16px;">Analysis</a>
+            </li><li class="u-nav-item"><a class="u-border-2 u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-grey-90" href={{ url_for('team') }} style="padding: 8px 16px;">Team</a>
+</li></ul>
+</div>
+</div>
+<div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+</div>
+</nav>
+</div></header>
+<section class="u-clearfix u-palette-1-light-3 u-section-1" id="sec-c3df">
+<div class="u-clearfix u-sheet u-sheet-1">
+<div class="u-clearfix u-expanded-width u-gutter-10 u-layout-wrap u-layout-wrap-1">
+<div class="u-layout">
+<div class="u-layout-col">
+  <div class="u-size-30">
+    <div class="u-layout-row">
+      <div class="u-container-style u-image u-layout-cell u-left-cell u-size-30 u-image-1" src="" data-image-width="1280" data-image-height="853">
+        <div class="u-container-layout u-valign-middle u-container-layout-1"></div>
+      </div>
+      <div class="u-align-left u-container-style u-layout-cell u-right-cell u-size-30 u-layout-cell-2">
+        <div class="u-container-layout u-container-layout-2">
+          <h2 class="u-text u-text-1">Database Infrastructure</h2>
+          <p class="u-text u-text-2">Counties were first grouped by county/county labels; vaccination rates were averaged and the population/ vaccination counts were summed. Data was then imported into Google Colab where columns were narrowed down to county/county, total population and vaccination rate.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="u-size-30">
+    <div class="u-layout-row">
+      <div class="u-align-left u-container-style u-layout-cell u-left-cell u-size-30 u-layout-cell-3">
+        <div class="u-container-layout u-container-layout-3">
+          <h2 class="u-text u-text-3">Machine Learning</h2>
+          <p class="u-text u-text-4">We chose to use a neural network to predict vaccination rates because the model behaves like a regression model, where a dependant variable or target (i.e., vaccination rates) can be predicted from independent variables or features (i.e., demographic information).</p>
+        </div>
+      </div>
+      <div class="u-container-style u-image u-layout-cell u-right-cell u-size-30 u-image-2" src="" data-image-width="1280" data-image-height="854">
+        <div class="u-container-layout u-valign-middle u-container-layout-4"></div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+    <section class="u-align-center u-clearfix u-palette-4-light-3 u-section-1" id="sec-b61e">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-container-style u-expanded-width u-post-details u-post-details-1">
+          <div class="u-container-layout u-container-layout-1">
+            <h2 class="u-blog-control u-text u-text-1">
+              <a class="u-post-header-link" href="post-5.html">Vaccinations by County</a>
+            </h2>
+            <div class="u-clearfix u-custom-html u-expanded-width u-custom-html-1">
+              <div class='tableauPlaceholder' id='viz1637017584365' style='position: relative'>
+              <noscript><a href='#'><img alt='Metric Map ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Va&#47;VaccinationInteractiveMapofNY&#47;MetricMap&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='VaccinationInteractiveMapofNY&#47;MetricMap' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Va&#47;VaccinationInteractiveMapofNY&#47;MetricMap&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='publish=yes' /></object></div>                
+              <script type='text/javascript'>                    var divElement = document.getElementById('viz1637017584365');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+              </div>
+            <p class="u-align-justify u-blog-control u-post-content u-text u-text-2">The above map depicts administered vaccinations in each county, and then further differentiates the number of doses the individual recieved, as well as their age and whether the area is considered a metro or non-metro county. The data is from January 2021 to date.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="u-align-center u-clearfix u-palette-1-light-3 u-section-2" id="carousel_e02b">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-container-style u-expanded-width u-post-details u-post-details-1">
+          <div class="u-container-layout u-container-layout-1">
+            <h2 class="u-blog-control u-text u-text-1">
+              <a class="u-post-header-link" href="post-5.html">Doses Administered and Vaccinated Status by County</a>
+            </h2>
+            <div class="u-clearfix u-custom-html u-expanded-width u-custom-html-1">
+              <div class="tableauPlaceholder" id="viz1636657421719" style="position: relative">
+                <noscript>&amp;amp;amp;amp;amp;amp;amp;amp;amp;lt;a href='#'&amp;amp;amp;amp;amp;amp;amp;amp;amp;gt;&amp;amp;amp;amp;amp;amp;amp;amp;amp;lt;img alt='Doses Administered vs. Fully Vaccinated Population ' src='https:&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;#47;&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;#47;public.tableau.com&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;#47;static&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;#47;images&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;#47;Fi&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;#47;FinalTeamProject-1&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;#47;DosesAdministeredvs_FullyVaccinatedPopulation&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;#47;1_rss.png' style='border: none' /&amp;amp;amp;amp;amp;amp;amp;amp;amp;gt;&amp;amp;amp;amp;amp;amp;amp;amp;amp;lt;/a&amp;amp;amp;amp;amp;amp;amp;amp;amp;gt;</noscript>
+                <object class="tableauViz" style="display:none;">
+                  <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F">
+                  <param name="embed_code_version" value="3">
+                  <param name="site_root" value="">
+                  <param name="name" value="FinalTeamProject-1/DosesAdministeredvs_FullyVaccinatedPopulation">
+                  <param name="tabs" value="no">
+                  <param name="toolbar" value="yes">
+                  <param name="static_image" value="https://public.tableau.com/static/images/Fi/FinalTeamProject-1/DosesAdministeredvs_FullyVaccinatedPopulation/1.png">
+                  <param name="animate_transition" value="yes">
+                  <param name="display_static_image" value="yes">
+                  <param name="display_spinner" value="yes">
+                  <param name="display_overlay" value="yes">
+                  <param name="display_count" value="yes">
+                  <param name="language" value="en-US">
+                  <param name="filter" value="publish=yes">
+                </object>
+              </div>
+              <script type="text/javascript"> var divElement = document.getElementById('viz1636657421719');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement); </script>
+            </div>
+            <p class="u-align-justify u-blog-control u-post-content u-text u-text-2">The interactive line graph above depictes the amount of doses administered against the number of fully vaccinated individuals. The data is visualized longitudinally from January 2021 to present day.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="u-align-center u-clearfix u-palette-4-light-3 u-section-3" id="carousel_30b8">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-container-style u-expanded-width u-post-details u-post-details-1">
+          <div class="u-container-layout u-container-layout-1">
+            <h2 class="u-blog-control u-text u-text-1">
+              <a class="u-post-header-link" href="post-5.html">Longitudinal Vaccination Trend</a>
+            </h2>
+            <div class="u-clearfix u-custom-html u-expanded-width u-custom-html-1">
+              <div class="tableauPlaceholder" id="viz1636657528724" style="position: relative">
+                <noscript>&amp;amp;amp;amp;amp;amp;amp;amp;amp;lt;a href='#'&amp;amp;amp;amp;amp;amp;amp;amp;amp;gt;&amp;amp;amp;amp;amp;amp;amp;amp;amp;lt;img alt='Trend Chart ' src='https:&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;#47;&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;#47;public.tableau.com&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;#47;static&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;#47;images&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;#47;Fi&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;#47;FinalTeamProject-1&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;#47;TrendChart&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;#47;1_rss.png' style='border: none' /&amp;amp;amp;amp;amp;amp;amp;amp;amp;gt;&amp;amp;amp;amp;amp;amp;amp;amp;amp;lt;/a&amp;amp;amp;amp;amp;amp;amp;amp;amp;gt;</noscript>
+                <object class="tableauViz" style="display:none;">
+                  <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F">
+                  <param name="embed_code_version" value="3">
+                  <param name="site_root" value="">
+                  <param name="name" value="FinalTeamProject-1/TrendChart">
+                  <param name="tabs" value="no">
+                  <param name="toolbar" value="yes">
+                  <param name="static_image" value="https://public.tableau.com/static/images/Fi/FinalTeamProject-1/TrendChart/1.png">
+                  <param name="animate_transition" value="yes">
+                  <param name="display_static_image" value="yes">
+                  <param name="display_spinner" value="yes">
+                  <param name="display_overlay" value="yes">
+                  <param name="display_count" value="yes">
+                  <param name="language" value="en-US">
+                  <param name="filter" value="publish=yes">
+                </object>
+              </div>
+              <script type="text/javascript"> var divElement = document.getElementById('viz1636657528724');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement); </script>
+            </div>
+            <p class="u-align-justify u-blog-control u-post-content u-text u-text-2">The interactive line graph above represents vaccinations administered by county, the ages of the indivuduals who recieved the vaccine as well as if was administered in a metro or non-metro area. Similarily to the above, the data is January 2021 to present day. </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="u-align-center u-clearfix u-palette-1-light-3 u-section-4" id="carousel_36f9">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-container-style u-expanded-width u-post-details u-post-details-1">
+          <div class="u-container-layout u-container-layout-1">
+            <h2 class="u-blog-control u-text u-text-1">
+              <a class="u-post-header-link" href="post-5.html">GeoJson Map</a>
+            </h2>
+              <div class="u-clearfix u-custom-html u-expanded-width u-custom-html-1">
+          
+            <!-- Portias map HTML -->
+              <div id="mapid"></div>
+              <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script> 
+              <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+            <!-- Leaflet JavaScript -->
+              <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+            integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+            crossorigin=""></script>
+            <!-- API key -->
+              <script type="text/javascript" src="../static/js/config.js"></script>
+              <script type="text/javascript" src="../static/js/data/c_data.js"></script>
+            <!-- Our JavaScript -->
+              <script type="text/javascript" src="../static/js/challenge_logic.js"></script>
+            <!-- End map script -->
+
+          </div>
+            <p class="u-align-justify u-blog-control u-post-content u-text u-text-2"> The above map has layering which allows the user to visualize the concentration of deaths per county, individuals who are completley vaccinated, as well as those who are only partially vaccinated.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+  <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-5364"><div class="u-clearfix u-sheet u-sheet-1">
+      <p class="u-small-text u-text u-text-variant u-text-1">2021</p>
+    </div></footer>
+  <section class="u-backlink u-clearfix u-grey-80">
+    <a class="u-link" href="https://github.com/Anoobis5/COVID_GeoJSON_FinalProject" target="_blank">
+    <span>Github Project</span>
+    </a>
+  </section>
+</body>
+</html>
