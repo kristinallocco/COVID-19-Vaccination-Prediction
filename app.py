@@ -21,9 +21,6 @@ def analysis():
 def team():
     return render_template('Team.html')
 
-@app.route('/GitHub Project/')
-def github():
-    return render_template('https://github.com/Anoobis5/COVID_GeoJSON_FinalProject')
 
 ######## Running the Flask App ########
 # You need this - this allows you to actually run the app
